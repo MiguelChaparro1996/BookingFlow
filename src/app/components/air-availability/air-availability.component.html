@@ -1,0 +1,98 @@
+<app-quicksearch></app-quicksearch>
+<section class="container-fluid">
+  <p-progressBar mode="indeterminate" [style]="{'height': '6px'}" *ngIf="!searchComplete"></p-progressBar>
+  <br>
+  <div id="result-filter-list" class="col-md-12" *ngIf="searchComplete">
+    <div class="alert alert-warning" role="alert" *ngIf="!availability">
+      <h4 class="alert-heading">Ups! Disculpenos!</h4>
+      <p>No hemos encontrado disponibilidad con esta información</p>
+      <hr>
+      <p class="mb-0">Podria intentar con otros filtros de búsqueda</p>
+    </div>
+    <ng-container *ngIf="availability">
+      <article *ngFor="let item of availability.results" class="card">
+        <div class="card-block row">
+          <div class="col-md-8">
+            <div class="card" *ngFor="let itinerary of item.itineraries;let i = index">
+              <span class="color-blue">Recomendación {{i+1}} </span>
+              <div class="table-responsive-sm">
+                <table >
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th colspan="5">IDA (Duración:{{itinerary.outbound.duration}})</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td> <td>Salida</td> <td>Llegada</td> <td class="text-center">Número Vuelo</td> <td class="text-center">Aerolinea</td> <td></td> <td></td> <td></td>
+                    </tr>
+                    <tr *ngFor="let flight of itinerary.outbound.flights">
+                      <td>
+                      </td>
+                      <td>{{flight.departs_at | date}} ({{flight.departs_at | date:'shortTime'}})</td>
+                      <td>{{flight.arrives_at | date}} ({{flight.arrives_at | date:'shortTime'}})</td>
+                      <td class="text-center">{{flight.flight_number}}</td>
+                      <td class="text-center"><img [src]="'assets/airlogos/'+flight.marketing_airline+'.gif'" [alt]="flight.marketing_airline"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-responsive-sm">
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th colspan="5">VUELTA (Duración: {{itinerary.inbound.duration}})</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td> <td>Salida</td> <td>Llegada</td> <td class="text-center">Número Vuelo</td> <td class="text-center">Aerolinea</td> <td></td> <td></td> <td></td>
+                    </tr>
+                    <tr *ngFor="let flight of itinerary.inbound.flights">
+                      <td>
+                      </td>
+                      <td>{{flight.departs_at | date}} ({{flight.departs_at | date:'shortTime'}})</td>
+                      <td>{{flight.arrives_at | date}} ({{flight.arrives_at | date:'shortTime'}})</td>
+                      <td class="text-center">{{flight.flight_number}}</td>
+                      <td class="text-center"><img [src]="'assets/airlogos/'+flight.marketing_airline+'.gif'" [alt]="flight.marketing_airline"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-price">
+              <label class="text-center">PRECIO <span class="font-light">TOTAL</span></label>
+              <span class="price font-normal">{{availability.currency}} {{item.fare.total_price | currency:availability.currency}}</span>
+              <table>
+                <tbody>
+                  <tr *ngIf="item.fare.price_per_adult">
+                    <td colspan="2" class="color-red">Adulto </td>
+                  </tr>
+                  <tr *ngIf="item.fare.price_per_adult">
+                    <td>TARIFA <span class="font-light">(x Adulto)</span></td> <td>{{item.fare.price_per_adult.total_fare| currency:availability.currency}}</td>
+                  </tr>
+                  <tr *ngIf="item.fare.price_per_adult">
+                    <td>Impuestos</td> <td>{{item.fare.price_per_adult.tax| currency:availability.currency}}</td>
+                  </tr>
+                  <tr *ngIf="item.fare.price_per_child">
+                    <td colspan="2" class="color-red">Niño </td>
+                  </tr>
+                  <tr *ngIf="item.fare.price_per_child">
+                    <td>TARIFA <span class="font-light">(x Niño)</span></td> <td>{{item.fare.price_per_child.total_fare| currency:availability.currency}}</td>
+                  </tr>
+                  <tr *ngIf="item.fare.price_per_child">
+                    <td>Impuestos</td> <td>{{item.fare.price_per_child.tax| currency:availability.currency}}</td>
+                  </tr>
+                </tbody>
+              </table> <button type="button" class="btn btn-red font-normal">Reservar</button> <label class="font-normal">Impuestos y cargos<br> estan incluidos</label> </div>
+            </div>
+          </div>
+        </article>
+      </ng-container>
+    </div>
+  </section>

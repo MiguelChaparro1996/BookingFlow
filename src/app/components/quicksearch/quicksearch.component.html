@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="form-row col-md-12 ">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate style="display:contents">
+      <div class="col-md-3 col-xs-12 form-group">
+        <h5>Origen</h5>
+        <p-autoComplete [(ngModel)]="model.origin" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" name="origin" field="label" [size]="30"
+        placeholder="Origen" [minLength]="3">
+        <ng-template let-country pTemplate="item">
+          <span style="font-size:18px">{{country.label}}</span>
+        </ng-template>
+      </p-autoComplete>
+    </div>
+    <div class="col-md-3 col-xs-12 form-group">
+      <h5>Destino</h5>
+      <p-autoComplete [(ngModel)]="model.destination" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" name="destination" field="label" [size]="30"
+      placeholder="Destino" [minLength]="3">
+      <ng-template let-country pTemplate="item">
+        <span style="font-size:18px">{{country.label}}</span>
+      </ng-template>
+    </p-autoComplete>
+  </div>
+  <div class="col-md-2 col-xs-12 form-group">
+    <h5>Fechas de Viaje</h5>
+    <p-calendar dateFormat="yy-mm-dd" [minDate]="minDate()" [(ngModel)]="model.rangeDates" selectionMode="range" [readonlyInput]="true" name="rangeDates" placeholder="Elija un rango"></p-calendar>
+  </div>
+  <div class="col-md-2 col-xs-12 form-group">
+    <h5>Adultos</h5>
+    <p-dropdown [options]="adults" [(ngModel)]="model.adults" placeholder="Seleccione" optionLabel="value" [showClear]="true" name="adults"  autoWidth="false" [style]="{'width':'100%'}"></p-dropdown>
+  </div>
+  <div class="col-md-2 col-xs-12 form-group">
+    <h5>Niños</h5>
+    <p-dropdown [options]="children" [(ngModel)]="model.children" placeholder="Seleccione" optionLabel="value" [showClear]="true" name="children"   autoWidth="false" [style]="{'width':'100%'}"></p-dropdown>
+  </div>
+<div class="col-md-2 col-xs-12 form-group">
+    <button class="btn btn-primary" type="submit">Buscar</button>
+  </div>
+</form>
+</div>
+</div>
+<p-growl [(value)]="msgs"></p-growl>

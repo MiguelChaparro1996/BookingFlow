@@ -1,0 +1,219 @@
+body {
+	background-color: #031625;
+}
+#search .form-group label {
+	color: #FFFFFF;
+}
+#info-search {
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+@media screen and (max-width: 768px) {
+	#info-search {
+		width: 100%;
+	}
+}
+#info-search .card-block {
+	padding: 20px;
+}
+.table-responsive table {
+	text-align: center;
+	width: 100%;
+}
+.table-responsive table tbody td,
+.table-responsive table tbody span {
+	font-family: normal;
+}
+#filter-list {
+	padding-top: 60px;
+}
+#filter-list h4 {
+	margin-bottom: 40px;
+}
+#filter-list h5 {
+	cursor: pointer;
+}
+#filter-list .accordion {
+	margin-bottom: 40px;
+}
+#filter-list .accordion .card {
+	background-color: transparent;
+	border: none;
+}
+#filter-list .accordion .card-header {
+	border: none;
+	background-color: transparent;
+	padding: 0px;
+}
+#filter-list .accordion .card-body {
+	padding: 10px 0px;
+}
+#filter-list .accordion .card-body .margin-bottom {
+	margin-bottom: 30px;
+}
+#filter-list .icon-down {
+	color: #f80034;
+}
+#filter-list input[type=radio] {
+	width: 13px;
+	height: 13px;
+}
+#result-filter-list .card {
+	padding: 20px;
+	border-radius: 9px;
+	color: #000;
+	margin-bottom: 20px;
+}
+#result-filter-list table {
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#result-filter-list table th {
+	color: #f80034;
+}
+#result-filter-list table a,
+#result-filter-list table a:hover {
+	color: #f80034;
+}
+#result-filter-list .logo-airline {
+	margin-bottom: 20px;
+}
+#result-filter-list .info-price {
+	background-color: #279DAB;
+	border-radius: 5px;
+	padding: 20px;
+	min-height: 100px;
+}
+#result-filter-list .info-price label {
+	display: block;
+	text-align: center;
+	font-family: normal;
+}
+#result-filter-list .info-price .price {
+	color: #FFF;
+	display: block;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+#result-filter-list .info-price table td {
+	font-family: normal;
+}
+#result-filter-list .info-price .btn {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+#result-filter-list .list-inline {
+	font-size: 40px;
+}
+.filter-pages ul li {
+	font-size: 20px;
+	padding-right: 30px;
+}
+.filter-pages ul li.active {
+	color: #f80034;
+}
+.filter-pages ul .arrow {
+	font-size: 30px;
+}
+#modal-detalles .modal-body {
+	margin-top: 20px;
+}
+#modal-detalles span {
+	display: block;
+	font-family: normal;
+}
+#modal-detalles table {
+	width: 100%;
+	margin-top: 30px;
+	font-family: normal;
+}
+#modal-detalles table thead th {
+	color: #FFF;
+	background-color: #f80034;
+	padding: 10px;
+	font-family: normal;
+}
+#modal-detalles .logo-aerolinea {
+	position: absolute;
+	right: 10px;
+}
+#modal-detalles .margin {
+	margin: 30px 0px;
+}
+
+#filter-airlines {
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+@media screen and (max-width: 768px) {
+	#filter-airlines {
+		width: 100%;
+	}
+}
+#filter-airlines .owl-prev span,
+#filter-airlines .owl-next span {
+	color: #FFF;
+	font-size: 50px;
+	position: absolute;
+}
+#filter-airlines .owl-prev span {
+	left: -25px;
+	top: -30px;
+}
+#filter-airlines .owl-next span {
+	right: -25px;
+	top: -30px;
+}
+#filter-airlines .owl-nav {
+	position: relative;
+	top: -85px;
+}
+#filter-airlines h5,
+#filter-airlines h5 span {
+	font-size: 20px;
+	color: #fff;
+}
+#filter-airlines h5 {
+	font-family: bold;
+}
+#filter-airlines h5 span {
+	font-family: book;
+}
+#filter-airlines .card-header {
+	background-color: white;
+	border-top-left-radius: 9px;
+	border-top-right-radius: 9px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+#filter-airlines .card-header img {
+	width: 150px;
+	margin: 0 auto;
+}
+#filter-airlines .card-body {
+	background-color: #279DAB;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 9px;
+	border-bottom-left-radius: 9px;
+}
+#filter-airlines table {
+	margin: 0 auto;
+}
+#filter-airlines table tr td {
+	font-family: normal;
+}
+#filter-airlines table tr .price {
+	color: #fff;
+}
+.color-red {
+    color: #f80034 !important
+}
+.color-blue {
+    color: #279DAB !important
+}
